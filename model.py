@@ -1,7 +1,8 @@
-from pydantic import BaseModel
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
-from database import  Base
+from sqlalchemy.orm import relationship, declarative_base
+from pydantic import BaseModel
+
+Base = declarative_base()
 
 
 
@@ -18,7 +19,7 @@ class Project(Base):
     description = Column(String)
     tech_stack = Column(String)
     link = Column (String, nullable=True)
-    owner_id = Column(Integer, ForeignKey("users.id"))
+    owner_id = Column(Integer, ForeignKey("user.id"))
 
     owner = relationship("User")
 
