@@ -1,0 +1,6 @@
+.env
+todo.db
+__pycahce__/
+venv/
+*.db
+*.pyc
